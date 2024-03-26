@@ -1,11 +1,9 @@
-import { WriteVarExpr } from '@angular/compiler';
 import { Component } from '@angular/core';
-import { elementAt, max, min, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-mega-sena',
   templateUrl: './mega-sena.component.html',
-  styleUrl: './mega-sena.component.css',
+  styleUrls: ['./mega-sena.component.css'],
 })
 export class MegaSenaComponent {
   number: number[] = [0, 0, 0, 0, 0, 0];
@@ -32,19 +30,19 @@ export class MegaSenaComponent {
 
     for (let b = minNumber; b < minInputs; b++) {
       if (this.catch[b] < minNumber || this.catch[b] > maxNumber) {
-        this.error = 'Type in a number between 0 and 60';
+        this.error = 'Digite um número entre 0 e 60';
         return;
       }
     }
 
     if (this.catch.length < minInputs) {
-      this.error = 'Type in all inputs';
+      this.error = 'Digite todos os números';
       return;
     }
 
     const hasDuplicate = new Set(this.catch).size !== this.catch.length;
     if (hasDuplicate) {
-      this.error = 'Duplicate numbers are not allowed';
+      this.error = 'Números duplicados não são permitidos';
       return;
     }
 

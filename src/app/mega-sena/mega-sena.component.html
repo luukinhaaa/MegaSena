@@ -1,127 +1,46 @@
-<main class="container py-4 text-center">
-  <div class="">
-    <i class="bi bi-star-fill bi-lg fs-3 text-warning"></i>
-    <i class="bir bi-star-fill fs-1 text-warning"> </i>
-    <i class="bi bi-star-fill fs-3 text-warning"></i>
-  </div>
-  <h1 class="mb-4">Mega-Sena Generator</h1>
-  <div class="d-flex gap-3 align-items-center justify-content-center mb-4">
-    <button
-      class="btn btn-outline-primary rounded-circle p-3"
-      style="width: 100px; height: 100px"
-    >
-      {{ number[0] }}
-    </button>
-    <button
-      class="btn btn-outline-secondary rounded-circle p-3"
-      style="width: 100px; height: 100px"
-    >
-      {{ number[1] }}
-    </button>
-    <button
-      class="btn btn-outline-success rounded-circle p-3"
-      style="width: 100px; height: 100px"
-    >
-      {{ number[2] }}
-    </button>
-    <button
-      class="btn btn-outline-danger rounded-circle p-3"
-      style="width: 100px; height: 100px"
-    >
-      {{ number[3] }}
-    </button>
-    <button
-      class="btn btn-outline-warning rounded-circle p-3"
-      style="width: 100px; height: 100px"
-    >
-      {{ number[4] }}
-    </button>
-    <button
-      class="btn btn-outline-info rounded-circle p-3"
-      style="width: 100px; height: 100px"
-    >
-      {{ number[5] }}
-    </button>
-  </div>
-  <section class="">
-    <h3 class="mb-4">Make your bet</h3>
-    <div class="d-flex gap-2 align-items-center justify-content-center mb-3">
-      <input
-        maxlength="2"
-        [(ngModel)]="catch[0]"
-        type="number"
-        class="border border-primary text-primary rounded"
-      />
-      <input
-        maxlength="2"
-        [(ngModel)]="catch[1]"
-        type="number"
-        class="border border-secondary text-secondary rounded"
-      />
-      <input
-        maxlength="2"
-        [(ngModel)]="catch[2]"
-        type="number"
-        class="border border-success text-success rounded"
-      />
-      <input
-        type="number"
-        [(ngModel)]="catch[3]"
-        maxlength="2"
-        class="border border-danger text-danger rounded"
-      />
-      <input
-        type="number"
-        [(ngModel)]="catch[4]"
-        maxlength="2"
-        class="border border-warning text-warning rounded"
-      />
-      <input
-        type="number"
-        [(ngModel)]="catch[5]"
-        maxlength="2"
-        class="border border-info text-info rounded"
-      />
-
-      <!-- <input
-        type="number"
-        [(ngModel)]="catch[6]"
-        maxlength="2"
-        class="border border-warning text-warning rounded"
-      />
-      <input
-        type="number"
-        [(ngModel)]="catch[7]"
-        maxlength="2"
-        class="border border-secondary text-secondary rounded"
-      />
-      <input
-        type="number"
-        [(ngModel)]="catch[8]"
-        maxlength="2"
-        class="border border-danger text-danger rounded"
-      />
-      <input
-        type="number"
-        [(ngModel)]="catch[9]"
-        maxlength="2"
-        class="border border-success text-success rounded"
-      /> -->
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card border-0 shadow">
+        <div class="card-body text-center">
+          <h1 class="mb-4">Loteria Master</h1>
+          <div class="d-flex justify-content-center mb-5">
+            <div class="p-3 bg-danger rounded-circle" style="width: 120px; height: 120px">
+              <p class="text-white">{{ number[0] }}</p>
+            </div>
+            <div class="p-3 bg-warning rounded-circle" style="width: 120px; height: 120px">
+              <p class="text-white">{{ number[1] }}</p>
+            </div>
+            <div class="p-3 bg-success rounded-circle" style="width: 120px; height: 120px">
+              <p class="text-white">{{ number[2] }}</p>
+            </div>
+            <div class="p-3 bg-danger rounded-circle" style="width: 120px; height: 120px">
+              <p class="text-white">{{ number[3] }}</p>
+            </div>
+            <div class="p-3 bg-warning rounded-circle" style="width: 120px; height: 120px">
+              <p class="text-white">{{ number[4] }}</p>
+            </div>
+            <div class="p-3 bg-success rounded-circle" style="width: 120px; height: 120px">
+              <p class="text-white">{{ number[5] }}</p>
+            </div>
+          </div>
+          <h3 class="mb-4">Escolha seus números da sorte</h3>
+          <div class="d-flex justify-content-center mb-4">
+            <input maxlength="2" [(ngModel)]="catch[0]" type="number" class="form-control border-0 rounded-pill bg-danger text-white text-center" style="width: 70px">
+            <input maxlength="2" [(ngModel)]="catch[1]" type="number" class="form-control border-0 rounded-pill bg-warning text-white text-center" style="width: 70px">
+            <input maxlength="2" [(ngModel)]="catch[2]" type="number" class="form-control border-0 rounded-pill bg-success text-white text-center" style="width: 70px">
+            <input maxlength="2" [(ngModel)]="catch[3]" type="number" class="form-control border-0 rounded-pill bg-danger text-white text-center" style="width: 70px">
+            <input maxlength="2" [(ngModel)]="catch[4]" type="number" class="form-control border-0 rounded-pill bg-warning text-white text-center" style="width: 70px">
+            <input maxlength="2" [(ngModel)]="catch[5]" type="number" class="form-control border-0 rounded-pill bg-success text-white text-center" style="width: 70px">
+          </div>
+          <button class="btn btn-danger me-1" (click)="megaSena()">Gerar Números</button>
+          <button class="btn btn-dark ms-1" (click)="reset()">Limpar</button>
+          <p id="howMuch" class="hidden mt-3">
+            Quantos números você acertou: <strong>{{ validation }}</strong>
+          </p>
+          <div>{{ error }}</div>
+        </div>
+      </div>
     </div>
-
-    <span class="fw-bold fs-6 mb-3">Click to generate game!</span>
-    <br />
-    <div class="mb-4 row-3 mx-auto">
-      <button class="btn btn-outline-dark me-1 col-2" (click)="megaSena()">
-        Generate Game
-      </button>
-      <button class="btn btn-outline-dark col-2 ms-1" (click)="reset()">
-        Reset
-      </button>
-    </div>
-    <p id="howMuch" class="hidden">
-      How much you got right: <strong> {{ validation }}</strong>
-    </p>
-    <div>{{ error }}</div>
-  </section>
-</main>
+  </div>
+</div>

@@ -11,7 +11,7 @@ describe('MegaSenaComponent', () => {
       declarations: [MegaSenaComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(MegaSenaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
